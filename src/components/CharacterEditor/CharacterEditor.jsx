@@ -34,7 +34,65 @@ function App() {
           </p>
         </header>
         <div className={styles.perspectiveElem}></div>
-        <div className={styles.controlColumn}>
+        <div className={styles.desktop_characterWrapper}>
+          <Character
+            body={body}
+            head={head}
+            face={face}
+            accessory={accessory}
+            skinColor={skinColor}
+            clothesColor={clothesColor}
+          />
+        </div>
+        <div className={styles.mobile_characterWrapper}>
+          <Character
+            body={body}
+            head={head}
+            face={face}
+            accessory={accessory}
+            skinColor={skinColor}
+            clothesColor={clothesColor}
+          />
+        </div>
+        <div className={styles.desktop_controlColumn}>
+          <ControlPane
+            title="Bodies"
+            options={bodyOptions}
+            currentOption={body}
+            handleSelectOption={setBody}
+          />
+          <ControlPane
+            title="Heads"
+            options={headOptions}
+            currentOption={head}
+            handleSelectOption={setHead}
+          />
+          <ControlPane
+            title="Faces"
+            options={faceOptions}
+            currentOption={face}
+            handleSelectOption={setFace}
+          />
+          <ControlPane
+            title="Accessories"
+            options={accessoryOptions}
+            currentOption={accessory}
+            handleSelectOption={setAccessory}
+          />
+          <ControlPane
+            title="Skin Color"
+            options={skinColorOptions}
+            currentOption={skinColor}
+            handleSelectOption={setSkinColor}
+          />
+          <ControlPane
+            title="Clothing Color"
+            options={clothesColorOptions}
+            currentOption={clothesColor}
+            handleSelectOption={setClothesColor}
+          />
+        </div>
+        <div className={styles.mobile_controlColumn}>
           <ControlPane
             title="Bodies"
             options={bodyOptions}
@@ -73,17 +131,6 @@ function App() {
           />
         </div>
       </MaxWidthWrapper>
-
-      <div className={styles.characterWrapper}>
-        <Character
-          body={body}
-          head={head}
-          face={face}
-          accessory={accessory}
-          skinColor={skinColor}
-          clothesColor={clothesColor}
-        />
-      </div>
     </main>
   );
 }

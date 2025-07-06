@@ -24,17 +24,31 @@
   margin: 0;
 }
 
-.characterWrapper {
+.desktop_characterWrapper {
   min-height: 500px;
   position: fixed;
-  top: 128px;
+  top: 20%;
   left: 50%;
   bottom: 5%;
 }
 
-.controlColumn {
+.desktop_controlColumn {
   position: relative;
   width: 50%;
+}
+
+.mobile_characterWrapper {
+  display: none;
+  min-height: 500px;
+  top: 20%;
+  bottom: 5%;
+}
+
+.mobile_controlColumn {
+  display: none;
+  position: relative;
+  overflow: auto;
+  bottom: 40%;
 }
 
 .perspectiveElem {
@@ -44,4 +58,36 @@
   right: 0;
   height: 40%;
   background-color: hsl(195deg, 20%, 86%);
+}
+
+@media (max-width: 730px) {
+  .perspectiveElem {
+    display: none;
+  }
+
+  .desktop_characterWrapper {
+    display: none;
+  }
+
+  .desktop_controlColumn {
+    display: none;
+  }
+
+  .mobile_characterWrapper {
+    display: block;
+  }
+
+  .mobile_controlColumn {
+    display: flex;
+  }
+
+  .characterEditor {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .header {
+    width: 100%;
+    padding: 8px 8px 0;
+  }
 }
